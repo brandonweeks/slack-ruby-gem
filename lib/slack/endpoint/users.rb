@@ -17,16 +17,6 @@ module Slack
       end
 
       #
-      # Disables an active user.
-      #
-      # @option options [user] :user
-      #   User to disable
-      def users_setInactive(options={})
-        throw ArgumentError.new("Required arguments :user missing") if options[:user].nil?
-        post("users.admin.setInactive", options)
-      end
-
-      #
       # Gets information about a user.
       #
       # @option options [user] :user
@@ -60,6 +50,27 @@ module Slack
       end
 
       #
+      # Disables an active user.
+      #
+      # @option options [user] :user
+      #   User to disable
+      def users_setInactive(options={})
+        throw ArgumentError.new("Required arguments :user missing") if options[:user].nil?
+        post("users.admin.setInactive", options)
+      end
+
+      #
+      # Sets the username
+      #
+      # @option options [user] :user
+      #   User to rename
+      def users_profile_set(options={})
+        throw ArgumentError.new("Required arguments :user missing") if options[:user].nil?
+        throw ArgumentError.new("Required arguments :user missing") if options[:profile].nil?
+        post("users.profile.set", options)
+      end
+
+      #
       # Manually sets user presence.
       #
       # @option options [Object] :presence
@@ -78,7 +89,7 @@ module Slack
       # @option options [user] :user
       #   User to disable
       def users_setRegular(options={})
-        throw ArgumentError.new("Required arguments :user missing") if options[:user].nil?
+        throw ArgumentError.new("Required arguments :usergi missing") if options[:user].nil?
         post("users.admin.setRegular", options)
       end
 
