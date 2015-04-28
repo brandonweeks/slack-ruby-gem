@@ -35,6 +35,11 @@ module Slack
           request.body = options unless options.empty?
         end
       end
+
+      unless response.body['ok']
+        raise response.body['error']
+      end
+
       return response.body
     end
   end
