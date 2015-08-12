@@ -24,7 +24,7 @@ module Slack
     # The endpoint that will be used to connect if none is set
     #
     # @note There is no reason to use any other endpoint at this time
-    DEFAULT_ENDPOINT = 'https://slack.com/api/'.freeze
+    DEFAULT_ENDPOINT = 'https://api.slack.com/'.freeze
 
     # By default, don't use a proxy server
     DEFAULT_PROXY = nil
